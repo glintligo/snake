@@ -1,0 +1,50 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\d\snake\simulation\modelsim
+T_opt
+VJYga9gRK6C1d]W`MjMNAg2
+04 16 4 work keycheck_vlg_tst fast 0
+=1-000ec6ab1383-5ffbfddb-2fa-1b50
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work +acc
+n@_opt
+OL;O;10.1c;51
+vkeycheck
+ID:AK1AcbA9_Hk2o@E14VF1
+Vn9?iaCfNNlW>2]c:oQho;1
+Z1 dC:\d\snake\simulation\modelsim
+w1610348724
+8C:/d/snake/keycheck.v
+FC:/d/snake/keycheck.v
+L0 1
+Z2 OL;L;10.1c;51
+r1
+31
+Z3 o-vlog01compat -work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
+!s100 o84HD?8a?P_9=RmW98AbV2
+!s85 0
+!s108 1610350043.193000
+!s107 C:/d/snake/keycheck.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/d/snake|C:/d/snake/keycheck.v|
+!s92 -vlog01compat -work work +incdir+C:/d/snake -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+vkeycheck_vlg_tst
+I9fn<Y==c<m<WVS^HOn_oW0
+VF0g58zP6aiN]SYFnU_0FH2
+R1
+w1610350007
+8C:/d/snake/simulation/modelsim/keycheck.vt
+FC:/d/snake/simulation/modelsim/keycheck.vt
+L0 28
+R2
+r1
+31
+R3
+!i10b 1
+!s100 N?<^n2H]n`72czdi[i;n>0
+!s85 0
+!s108 1610350043.374000
+!s107 C:/d/snake/simulation/modelsim/keycheck.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/d/snake/simulation/modelsim|C:/d/snake/simulation/modelsim/keycheck.vt|
+!s92 -vlog01compat -work work +incdir+C:/d/snake/simulation/modelsim -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF

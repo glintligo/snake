@@ -1,0 +1,7 @@
+
+State Machine - |snake_top|snack_control:u1_snack_control|dir
+Name dir.down dir.up dir.left dir.right 
+dir.right 0 0 0 0 
+dir.left 0 0 1 1 
+dir.up 0 1 0 1 
+dir.down 1 0 0 1 

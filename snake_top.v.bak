@@ -1,0 +1,29 @@
+module snake_top(
+clk, rst_n,centerbt,upbt,downbt,rightbt,leftbt, vga_r,vga_g,vga_b,hsync,vsync);
+    input clk,rst_n,centerbt,upbt,downbt,rightbt,leftbt;
+    output hsync,vsync;
+    output[3:0] vga_r,vga_g,vga_b;
+    wire[1:0] game_status;
+    wire snake,strike_itself,strike_wall;
+    wire[9:0] x_pos,y_pos;
+    wire[9:0] head_x, head_y;
+    wire[3:0] vga_r, vga_g, vga_b;
+    wire[9:0] apple_x,apple_y;
+    wire apple,apple_refresh;
+
+game_control 
+G(
+clk,rst_n,centerbt,strike_itself,strike_wall,game_status
+);
+
+VGA
+V(
+game_status,clk,rst_n,snake,apple,upbt,downbt,rightbt,leftbt,
+x_pos,y_pos,vga_r,vga_g,vga_b,hsync,vsync);
+
+snake_control S(
+game_status,clk,upbt,downbt,rightbt,leftbt,x_pos,y_pos,
+apple_x,apple_y,apple_refresh,snake,head_x,head_y,strike_itself,strike_wall);
+
+apple A(
+game_status,clk,rst_n,head_x,head_y,x_pos,y_pos, apple,apple_refresh);
