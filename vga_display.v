@@ -32,14 +32,24 @@ always @(posedge vga_clk or negedge sys_rst_n) begin
         //   || (pixel_ypos < SIDE_W) || (pixel_ypos >= V_DISP - SIDE_W))
         //     pixel_data <= BLUE;                 //绘制边框为蓝色
         // else
-        if((pixel_xpos >= box_x) && (pixel_xpos < box_x + BLOCK_W)
-          && (pixel_ypos >= box_y) && (pixel_ypos < box_y + BLOCK_W))
-            pixel_data <= BLUE;                //绘制方块为黑色
-        else
-        if (snack_r)
-            pixel_data <= RED;
-        else
-            pixel_data <= WHITE;                //绘制背景为白色
+        case(State_)
+         0:begin
+             
+         end
+         1:begin
+            if((pixel_xpos >= box_x) && (pixel_xpos < box_x + BLOCK_W)
+            && (pixel_ypos >= box_y) && (pixel_ypos < box_y + BLOCK_W))
+                pixel_data <= BLUE;                //绘制方块为蓝色
+            else
+            if (snack_r)
+                pixel_data <= RED;
+            else
+                pixel_data <= WHITE;                //绘制背景为白色
+         end
+         2:begin
+             
+         end
+
     end
 end
 
