@@ -7,7 +7,8 @@ module vga_display(
     output reg [15:0] pixel_data,                //像素点数据
 	 input [9:0]box_x,
     input [9:0]box_y,
-	input  snack_r
+	input  snack_r,
+    input fin
     );    
     
 parameter  H_DISP = 11'd800;                    //分辨率——行

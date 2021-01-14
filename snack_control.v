@@ -11,7 +11,8 @@ module snack_control(
     input [9:0]x_pos,
     input [9:0]y_pos,
     output reg drive,
-    output  snack_r
+    output  snack_r,
+    output reg fin//游戏结束标志位
     );
     //------------------------------------------------------------------------------
     //蛇头移动方向控制
@@ -56,7 +57,7 @@ module snack_control(
         else if(!key_d1 && dir != up)    dir <= down;
     //------------------------------------------------------------------------------
     //蛇体寄存器，蛇体坐标和当前移动方向
-    reg fin;//游戏结束标志位
+
     reg[9:0]snack_x[11:0];
     reg[9:0]snack_y[11:0];
     reg [18:0]cnt_m; //最大值312500;

@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "snake_top")
-  (DATE "01/11/2021 18:07:26")
+  (DATE "01/14/2021 14:08:51")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition")
@@ -18622,7 +18622,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE u_vga_display\|pixel_data\[0\])
+    (INSTANCE u_vga_display\|pixel_data\[4\])
     (DELAY
       (ABSOLUTE
         (PORT clk (1609:1609:1609) (1643:1643:1643))

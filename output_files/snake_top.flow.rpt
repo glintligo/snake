@@ -1,5 +1,5 @@
 Flow report for snake_top
-Mon Jan 11 18:07:29 2021
+Thu Jan 14 14:08:53 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Jan 11 18:07:29 2021       ;
+; Flow Status                        ; Successful - Thu Jan 14 14:08:53 2021       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; snake_top                                   ;
 ; Top-level Entity Name              ; snake_top                                   ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/11/2021 18:06:11 ;
+; Start date & time ; 01/14/2021 14:07:52 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; snake_top           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                      ; Value                                                                                                                                                                             ; Default Value ; Entity Name ; Section Id       ;
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 1095836249270.161035957011812                                                                                                                                                     ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID                ; 1097318843952.161060447122168                                                                                                                                                     ; --            ; --          ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; i1                                                                                                                                                                                ; --            ; --          ; keycheck_vlg_tst ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; keycheck_vlg_tst                                                                                                                                                                  ; --            ; --          ; eda_simulation   ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                                                                                                                                                       ; --            ; --          ; eda_simulation   ;
@@ -91,6 +91,7 @@ refer to the applicable agreement for further details.
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                                                                                                                                                                 ; --            ; --          ; --               ;
 ; MISC_FILE                            ; video_pll_bb.v                                                                                                                                                                    ; --            ; --          ; --               ;
 ; MISC_FILE                            ; video_pll.ppf                                                                                                                                                                     ; --            ; --          ; --               ;
+; MISC_FILE                            ; osd_rom_bb.v                                                                                                                                                                      ; --            ; --          ; --               ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS       ; Half Signal Swing                                                                                                                                                                 ; --            ; --          ; --               ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS       ; Half Signal Swing                                                                                                                                                                 ; --            ; --          ; --               ;
 ; OUTPUT_IO_TIMING_NEAR_END_VMEAS      ; Half Vccio                                                                                                                                                                        ; --            ; --          ; --               ;
@@ -138,12 +139,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:47     ; 1.0                     ; 4860 MB             ; 00:01:06                           ;
-; Fitter                    ; 00:00:11     ; 1.0                     ; 5246 MB             ; 00:00:12                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 4682 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.1                     ; 4755 MB             ; 00:00:04                           ;
-; EDA Netlist Writer        ; 00:00:07     ; 1.0                     ; 4671 MB             ; 00:00:06                           ;
-; Total                     ; 00:01:12     ; --                      ; --                  ; 00:01:30                           ;
+; Analysis & Synthesis      ; 00:00:35     ; 1.0                     ; 4857 MB             ; 00:01:07                           ;
+; Fitter                    ; 00:00:10     ; 1.1                     ; 5522 MB             ; 00:00:13                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4681 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.2                     ; 4777 MB             ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 4672 MB             ; 00:00:05                           ;
+; Total                     ; 00:00:55     ; --                      ; --                  ; 00:01:30                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -152,11 +153,11 @@ refer to the applicable agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-IP04H8S  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; DESKTOP-IP04H8S  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; DESKTOP-IP04H8S  ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-IP04H8S  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer        ; DESKTOP-IP04H8S  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; LAPTOP-PD9C7IFG  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; LAPTOP-PD9C7IFG  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; LAPTOP-PD9C7IFG  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; LAPTOP-PD9C7IFG  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-PD9C7IFG  ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

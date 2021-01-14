@@ -1,5 +1,5 @@
 Analysis & Synthesis report for snake_top
-Mon Jan 11 18:06:59 2021
+Thu Jan 14 14:08:28 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -17,22 +17,27 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |snake_top|snack_control:u1_snack_control|dir
  11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for sld_signaltap:auto_signaltap_0
- 16. Parameter Settings for User Entity Instance: video_pll:video_pll_m0|altpll:altpll_component
- 17. Parameter Settings for User Entity Instance: vga_driver:u_vga_driver
- 18. Parameter Settings for User Entity Instance: vga_display:u_vga_display
- 19. Parameter Settings for User Entity Instance: snack_control:u1_snack_control
- 20. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 21. altpll Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "snack_control:u1_snack_control"
- 23. Signal Tap Logic Analyzer Settings
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Connections to In-System Debugging Instance "auto_signaltap_0"
- 27. Analysis & Synthesis Messages
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated
+ 17. Source assignments for sld_signaltap:auto_signaltap_0
+ 18. Parameter Settings for User Entity Instance: video_pll:video_pll_m0|altpll:altpll_component
+ 19. Parameter Settings for User Entity Instance: vga_driver:u_vga_driver
+ 20. Parameter Settings for User Entity Instance: vga_display:u_vga_display
+ 21. Parameter Settings for User Entity Instance: vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component
+ 22. Parameter Settings for User Entity Instance: snack_control:u1_snack_control
+ 23. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 24. altpll Parameter Settings by Entity Instance
+ 25. altsyncram Parameter Settings by Entity Instance
+ 26. Port Connectivity Checks: "snack_control:u1_snack_control"
+ 27. Port Connectivity Checks: "vga_display:u_vga_display"
+ 28. Signal Tap Logic Analyzer Settings
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 32. Analysis & Synthesis Messages
 
 
 
@@ -58,7 +63,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 11 18:06:59 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jan 14 14:08:28 2021       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; snake_top                                   ;
 ; Top-level Entity Name              ; snake_top                                   ;
@@ -166,94 +171,99 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                       ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------+-------------+
-; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                             ; Library     ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------+-------------+
-; snake_top.v                                                        ; yes             ; User Verilog HDL File                        ; C:/d/snake/snake_top.v                                                                   ;             ;
-; vga_display.v                                                      ; yes             ; User Verilog HDL File                        ; C:/d/snake/vga_display.v                                                                 ;             ;
-; vga_driver.v                                                       ; yes             ; User Verilog HDL File                        ; C:/d/snake/vga_driver.v                                                                  ;             ;
-; video_pll.v                                                        ; yes             ; User Wizard-Generated File                   ; C:/d/snake/video_pll.v                                                                   ;             ;
-; random_box.v                                                       ; yes             ; User Verilog HDL File                        ; C:/d/snake/random_box.v                                                                  ;             ;
-; random.v                                                           ; yes             ; User Verilog HDL File                        ; C:/d/snake/random.v                                                                      ;             ;
-; box_create.v                                                       ; yes             ; User Verilog HDL File                        ; C:/d/snake/box_create.v                                                                  ;             ;
-; snack_control.v                                                    ; yes             ; User Verilog HDL File                        ; C:/d/snake/snack_control.v                                                               ;             ;
-; keycheck.v                                                         ; yes             ; User Verilog HDL File                        ; C:/d/snake/keycheck.v                                                                    ;             ;
-; altpll.tdf                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altpll.tdf                        ;             ;
-; aglobal171.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc                    ;             ;
-; stratix_pll.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_pll.inc                   ;             ;
-; stratixii_pll.inc                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratixii_pll.inc                 ;             ;
-; cycloneii_pll.inc                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/cycloneii_pll.inc                 ;             ;
-; db/video_pll_altpll.v                                              ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/video_pll_altpll.v                                                         ;             ;
-; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_signaltap.vhd                 ;             ;
-; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd            ;             ;
-; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_ela_control.vhd               ;             ;
-; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_shiftreg.tdf                  ;             ;
-; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_constant.inc                  ;             ;
-; dffeea.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/dffeea.inc                        ;             ;
-; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_mbpmg.vhd                     ;             ;
-; sld_ela_trigger_flow_mgr.vhd                                       ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd      ;             ;
-; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_buffer_manager.vhd            ;             ;
-; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf                    ;             ;
-; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc             ;             ;
-; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                       ;             ;
-; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc                    ;             ;
-; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc                     ;             ;
-; altrom.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc                        ;             ;
-; altram.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc                        ;             ;
-; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc                      ;             ;
-; db/altsyncram_eb24.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/altsyncram_eb24.tdf                                                        ;             ;
-; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.tdf                      ;             ;
-; memmodes.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/others/maxplus2/memmodes.inc                    ;             ;
-; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_hdffe.inc                       ;             ;
-; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_le_rden_reg.inc               ;             ;
-; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.inc                    ;             ;
-; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.tdf                       ;             ;
-; muxlut.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/muxlut.inc                        ;             ;
-; bypassff.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/bypassff.inc                      ;             ;
-; altshift.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.inc                      ;             ;
-; db/mux_tsc.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/mux_tsc.tdf                                                                ;             ;
-; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.tdf                    ;             ;
-; declut.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/declut.inc                        ;             ;
-; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_compare.inc                   ;             ;
-; db/decode_dvf.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/decode_dvf.tdf                                                             ;             ;
-; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_counter.tdf                   ;             ;
-; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc                   ;             ;
-; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/cmpconst.inc                      ;             ;
-; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_counter.inc                   ;             ;
-; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_counter_stratix.inc           ;             ;
-; db/cntr_igi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/cntr_igi.tdf                                                               ;             ;
-; db/cmpr_sgc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/cmpr_sgc.tdf                                                               ;             ;
-; db/cntr_m9j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/cntr_m9j.tdf                                                               ;             ;
-; db/cntr_ggi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/cntr_ggi.tdf                                                               ;             ;
-; db/cmpr_rgc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/cmpr_rgc.tdf                                                               ;             ;
-; db/cntr_23j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/cntr_23j.tdf                                                               ;             ;
-; db/cmpr_ngc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/d/snake/db/cmpr_ngc.tdf                                                               ;             ;
-; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                    ;             ;
-; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd     ;             ;
-; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv ;             ;
-; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_hub.vhd                       ; altera_sld  ;
-; db/ip/slde7b6c866/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/d/snake/db/ip/slde7b6c866/alt_sld_fab.v                                               ; alt_sld_fab ;
-; db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab.v                        ; alt_sld_fab ;
-; db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_ident.sv                 ; alt_sld_fab ;
-; db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_presplit.sv              ; alt_sld_fab ;
-; db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd            ; alt_sld_fab ;
-; db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_splitter.sv              ; alt_sld_fab ;
-; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                  ;             ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------+-------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                  ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                        ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------+
+; snake_top.v                                                        ; yes             ; User Verilog HDL File                        ; D:/GradeFour/FPGA-VHDL/pro/snake/snake_top.v                                                        ;             ;
+; vga_display.v                                                      ; yes             ; User Verilog HDL File                        ; D:/GradeFour/FPGA-VHDL/pro/snake/vga_display.v                                                      ;             ;
+; vga_driver.v                                                       ; yes             ; User Verilog HDL File                        ; D:/GradeFour/FPGA-VHDL/pro/snake/vga_driver.v                                                       ;             ;
+; video_pll.v                                                        ; yes             ; User Wizard-Generated File                   ; D:/GradeFour/FPGA-VHDL/pro/snake/video_pll.v                                                        ;             ;
+; random_box.v                                                       ; yes             ; User Verilog HDL File                        ; D:/GradeFour/FPGA-VHDL/pro/snake/random_box.v                                                       ;             ;
+; random.v                                                           ; yes             ; User Verilog HDL File                        ; D:/GradeFour/FPGA-VHDL/pro/snake/random.v                                                           ;             ;
+; box_create.v                                                       ; yes             ; User Verilog HDL File                        ; D:/GradeFour/FPGA-VHDL/pro/snake/box_create.v                                                       ;             ;
+; snack_control.v                                                    ; yes             ; User Verilog HDL File                        ; D:/GradeFour/FPGA-VHDL/pro/snake/snack_control.v                                                    ;             ;
+; keycheck.v                                                         ; yes             ; User Verilog HDL File                        ; D:/GradeFour/FPGA-VHDL/pro/snake/keycheck.v                                                         ;             ;
+; osd_rom.v                                                          ; yes             ; User Wizard-Generated File                   ; D:/GradeFour/FPGA-VHDL/pro/snake/osd_rom.v                                                          ;             ;
+; altpll.tdf                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altpll.tdf                                   ;             ;
+; aglobal171.inc                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc                               ;             ;
+; stratix_pll.inc                                                    ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_pll.inc                              ;             ;
+; stratixii_pll.inc                                                  ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratixii_pll.inc                            ;             ;
+; cycloneii_pll.inc                                                  ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/cycloneii_pll.inc                            ;             ;
+; db/video_pll_altpll.v                                              ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/video_pll_altpll.v                                              ;             ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf                               ;             ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc                        ;             ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                                  ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc                               ;             ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc                                ;             ;
+; altrom.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc                                   ;             ;
+; altram.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc                                   ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc                                 ;             ;
+; db/altsyncram_e7a1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_e7a1.tdf                                             ;             ;
+; ./utils/gameover.mif                                               ; yes             ; Auto-Found Memory Initialization File        ; D:/GradeFour/FPGA-VHDL/pro/snake/utils/gameover.mif                                                 ;             ;
+; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_signaltap.vhd                            ;             ;
+; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                       ;             ;
+; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_ela_control.vhd                          ;             ;
+; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_shiftreg.tdf                             ;             ;
+; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_constant.inc                             ;             ;
+; dffeea.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/dffeea.inc                                   ;             ;
+; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_mbpmg.vhd                                ;             ;
+; sld_ela_trigger_flow_mgr.vhd                                       ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd                 ;             ;
+; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_buffer_manager.vhd                       ;             ;
+; db/altsyncram_eb24.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_eb24.tdf                                             ;             ;
+; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.tdf                                 ;             ;
+; memmodes.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/others/maxplus2/memmodes.inc                               ;             ;
+; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_hdffe.inc                                  ;             ;
+; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_le_rden_reg.inc                          ;             ;
+; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.inc                               ;             ;
+; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.tdf                                  ;             ;
+; muxlut.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/muxlut.inc                                   ;             ;
+; bypassff.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/bypassff.inc                                 ;             ;
+; altshift.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.inc                                 ;             ;
+; db/mux_tsc.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/mux_tsc.tdf                                                     ;             ;
+; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.tdf                               ;             ;
+; declut.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/declut.inc                                   ;             ;
+; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_compare.inc                              ;             ;
+; db/decode_dvf.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/decode_dvf.tdf                                                  ;             ;
+; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_counter.tdf                              ;             ;
+; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc                              ;             ;
+; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/cmpconst.inc                                 ;             ;
+; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_counter.inc                              ;             ;
+; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                      ;             ;
+; db/cntr_igi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/cntr_igi.tdf                                                    ;             ;
+; db/cmpr_sgc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/cmpr_sgc.tdf                                                    ;             ;
+; db/cntr_m9j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/cntr_m9j.tdf                                                    ;             ;
+; db/cntr_ggi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/cntr_ggi.tdf                                                    ;             ;
+; db/cmpr_rgc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/cmpr_rgc.tdf                                                    ;             ;
+; db/cntr_23j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/cntr_23j.tdf                                                    ;             ;
+; db/cmpr_ngc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/cmpr_ngc.tdf                                                    ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                               ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv            ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_hub.vhd                                  ; altera_sld  ;
+; db/ip/slde7b6c866/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                             ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------+
 
 
 +---------------------------------------------------------+
@@ -420,6 +430,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |snake_top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                 ;
 ; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |snake_top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                 ;
 ; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |snake_top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                 ;
+; Altera ; ROM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |snake_top|vga_display:u_vga_display|osd_rom:osd_rom_m0                                                                                                                                                                                                                        ; osd_rom.v       ;
 ; Altera ; ALTPLL       ; 17.1    ; N/A          ; N/A          ; |snake_top|video_pll:video_pll_m0                                                                                                                                                                                                                                              ; video_pll.v     ;
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
@@ -443,14 +454,32 @@ Encoding Type:  One-Hot
 ; Register name                                               ; Reason for Removal                                   ;
 +-------------------------------------------------------------+------------------------------------------------------+
 ; random_box:u1_random_box|box_create:U1_box_create|rand_x[9] ; Stuck at GND due to stuck port data_in               ;
+; vga_display:u_vga_display|bitplace[0]                       ; Stuck at VCC due to stuck port clock_enable          ;
+; vga_display:u_vga_display|osd_ram_addr[0..2]                ; Stuck at GND due to stuck port clock_enable          ;
+; vga_display:u_vga_display|bitplace[1,2]                     ; Stuck at VCC due to stuck port clock_enable          ;
+; vga_display:u_vga_display|osd_ram_addr[3..13]               ; Lost fanout                                          ;
 ; random_box:u1_random_box|box_create:U1_box_create|rand_y[9] ; Stuck at GND due to stuck port data_in               ;
-; vga_display:u_vga_display|pixel_data[1..4]                  ; Merged with vga_display:u_vga_display|pixel_data[0]  ;
 ; vga_display:u_vga_display|pixel_data[11..14]                ; Merged with vga_display:u_vga_display|pixel_data[15] ;
 ; vga_display:u_vga_display|pixel_data[5..9]                  ; Merged with vga_display:u_vga_display|pixel_data[10] ;
+; vga_display:u_vga_display|pixel_data[0..3]                  ; Merged with vga_display:u_vga_display|pixel_data[4]  ;
 ; snack_control:u1_snack_control|dir~8                        ; Lost fanout                                          ;
 ; snack_control:u1_snack_control|dir~9                        ; Lost fanout                                          ;
-; Total Number of Removed Registers = 17                      ;                                                      ;
+; Total Number of Removed Registers = 34                      ;                                                      ;
 +-------------------------------------------------------------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                         ;
++---------------------------------------+--------------------------------+--------------------------------------------+
+; Register name                         ; Reason for Removal             ; Registers Removed due to This Register     ;
++---------------------------------------+--------------------------------+--------------------------------------------+
+; vga_display:u_vga_display|bitplace[0] ; Stuck at VCC                   ; vga_display:u_vga_display|osd_ram_addr[8], ;
+;                                       ; due to stuck port clock_enable ; vga_display:u_vga_display|osd_ram_addr[7], ;
+;                                       ;                                ; vga_display:u_vga_display|osd_ram_addr[6], ;
+;                                       ;                                ; vga_display:u_vga_display|osd_ram_addr[5], ;
+;                                       ;                                ; vga_display:u_vga_display|osd_ram_addr[4], ;
+;                                       ;                                ; vga_display:u_vga_display|osd_ram_addr[3]  ;
++---------------------------------------+--------------------------------+--------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -522,6 +551,15 @@ Encoding Type:  One-Hot
 ; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |snake_top|snack_control:u1_snack_control|snack_y[0][8] ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |snake_top|snack_control:u1_snack_control|dir           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                   ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                    ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -937,6 +975,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                          ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                       ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                       ;
+; WIDTH_A                            ; 8                    ; Signed Integer                                                ;
+; WIDTHAD_A                          ; 11                   ; Signed Integer                                                ;
+; NUMWORDS_A                         ; 2048                 ; Signed Integer                                                ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                       ;
+; WIDTH_B                            ; 1                    ; Untyped                                                       ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                       ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                       ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                       ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                       ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                       ;
+; INIT_FILE                          ; ./utils/gameover.mif ; Untyped                                                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                       ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                       ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                       ;
+; CBXI_PARAMETER                     ; altsyncram_e7a1      ; Untyped                                                       ;
++------------------------------------+----------------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: snack_control:u1_snack_control ;
 +----------------+---------------------+--------------------------------------+
@@ -1034,14 +1133,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "snack_control:u1_snack_control"                                                                                                                                                    ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; x_pos ; Input ; Warning  ; Input port expression (11 bits) is wider than the input port (10 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; y_pos ; Input ; Warning  ; Input port expression (11 bits) is wider than the input port (10 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                         ;
++-------------------------------------------+------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                        ;
++-------------------------------------------+------------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                            ;
+; Entity Instance                           ; vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                          ;
+;     -- WIDTH_A                            ; 8                                                                            ;
+;     -- NUMWORDS_A                         ; 2048                                                                         ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                       ;
+;     -- WIDTH_B                            ; 1                                                                            ;
+;     -- NUMWORDS_B                         ; 1                                                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                    ;
++-------------------------------------------+------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "snack_control:u1_snack_control"                                                                                                                                                     ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                                                            ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; x_pos ; Input  ; Warning  ; Input port expression (11 bits) is wider than the input port (10 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; y_pos ; Input  ; Warning  ; Input port expression (11 bits) is wider than the input port (10 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; fin   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_display:u_vga_display"                                                                                                                  ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; fin  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1225,37 +1354,39 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Jan 11 18:06:09 2021
+    Info: Processing started: Thu Jan 14 14:07:51 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off snake -c snake_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Warning (10275): Verilog HDL Module Instantiation warning at snake_top.v(50): ignored dangling comma in List of Port Connections File: C:/d/snake/snake_top.v Line: 50
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (10275): Verilog HDL Module Instantiation warning at snake_top.v(50): ignored dangling comma in List of Port Connections File: D:/GradeFour/FPGA-VHDL/pro/snake/snake_top.v Line: 50
 Info (12021): Found 1 design units, including 1 entities, in source file snake_top.v
-    Info (12023): Found entity 1: snake_top File: C:/d/snake/snake_top.v Line: 1
+    Info (12023): Found entity 1: snake_top File: D:/GradeFour/FPGA-VHDL/pro/snake/snake_top.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_display.v
-    Info (12023): Found entity 1: vga_display File: C:/d/snake/vga_display.v Line: 1
+    Info (12023): Found entity 1: vga_display File: D:/GradeFour/FPGA-VHDL/pro/snake/vga_display.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_driver.v
-    Info (12023): Found entity 1: vga_driver File: C:/d/snake/vga_driver.v Line: 1
+    Info (12023): Found entity 1: vga_driver File: D:/GradeFour/FPGA-VHDL/pro/snake/vga_driver.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file video_pll.v
-    Info (12023): Found entity 1: video_pll File: C:/d/snake/video_pll.v Line: 39
+    Info (12023): Found entity 1: video_pll File: D:/GradeFour/FPGA-VHDL/pro/snake/video_pll.v Line: 39
 Warning (12019): Can't analyze file -- file apple.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file random_apple.v
-    Info (12023): Found entity 1: random_apple File: C:/d/snake/random_apple.v Line: 1
+    Info (12023): Found entity 1: random_apple File: D:/GradeFour/FPGA-VHDL/pro/snake/random_apple.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file random_box.v
-    Info (12023): Found entity 1: random_box File: C:/d/snake/random_box.v Line: 1
+    Info (12023): Found entity 1: random_box File: D:/GradeFour/FPGA-VHDL/pro/snake/random_box.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file random.v
-    Info (12023): Found entity 1: random File: C:/d/snake/random.v Line: 1
+    Info (12023): Found entity 1: random File: D:/GradeFour/FPGA-VHDL/pro/snake/random.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file box_create.v
-    Info (12023): Found entity 1: box_create File: C:/d/snake/box_create.v Line: 1
+    Info (12023): Found entity 1: box_create File: D:/GradeFour/FPGA-VHDL/pro/snake/box_create.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file snack_control.v
-    Info (12023): Found entity 1: snack_control File: C:/d/snake/snack_control.v Line: 2
+    Info (12023): Found entity 1: snack_control File: D:/GradeFour/FPGA-VHDL/pro/snake/snack_control.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file keycheck.v
-    Info (12023): Found entity 1: keycheck File: C:/d/snake/keycheck.v Line: 1
+    Info (12023): Found entity 1: keycheck File: D:/GradeFour/FPGA-VHDL/pro/snake/keycheck.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file osd_rom.v
+    Info (12023): Found entity 1: osd_rom File: D:/GradeFour/FPGA-VHDL/pro/snake/osd_rom.v Line: 39
 Info (12127): Elaborating entity "snake_top" for the top level hierarchy
-Info (12128): Elaborating entity "video_pll" for hierarchy "video_pll:video_pll_m0" File: C:/d/snake/snake_top.v Line: 50
-Info (12128): Elaborating entity "altpll" for hierarchy "video_pll:video_pll_m0|altpll:altpll_component" File: C:/d/snake/video_pll.v Line: 90
-Info (12130): Elaborated megafunction instantiation "video_pll:video_pll_m0|altpll:altpll_component" File: C:/d/snake/video_pll.v Line: 90
-Info (12133): Instantiated megafunction "video_pll:video_pll_m0|altpll:altpll_component" with the following parameter: File: C:/d/snake/video_pll.v Line: 90
+Info (12128): Elaborating entity "video_pll" for hierarchy "video_pll:video_pll_m0" File: D:/GradeFour/FPGA-VHDL/pro/snake/snake_top.v Line: 50
+Info (12128): Elaborating entity "altpll" for hierarchy "video_pll:video_pll_m0|altpll:altpll_component" File: D:/GradeFour/FPGA-VHDL/pro/snake/video_pll.v Line: 90
+Info (12130): Elaborated megafunction instantiation "video_pll:video_pll_m0|altpll:altpll_component" File: D:/GradeFour/FPGA-VHDL/pro/snake/video_pll.v Line: 90
+Info (12133): Instantiated megafunction "video_pll:video_pll_m0|altpll:altpll_component" with the following parameter: File: D:/GradeFour/FPGA-VHDL/pro/snake/video_pll.v Line: 90
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1311,39 +1442,63 @@ Info (12133): Instantiated megafunction "video_pll:video_pll_m0|altpll:altpll_co
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/video_pll_altpll.v
-    Info (12023): Found entity 1: video_pll_altpll File: C:/d/snake/db/video_pll_altpll.v Line: 29
-Info (12128): Elaborating entity "video_pll_altpll" for hierarchy "video_pll:video_pll_m0|altpll:altpll_component|video_pll_altpll:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:u_vga_driver" File: C:/d/snake/snake_top.v Line: 64
-Info (12128): Elaborating entity "vga_display" for hierarchy "vga_display:u_vga_display" File: C:/d/snake/snake_top.v Line: 76
-Info (12128): Elaborating entity "snack_control" for hierarchy "snack_control:u1_snack_control" File: C:/d/snake/snake_top.v Line: 92
-Info (12128): Elaborating entity "keycheck" for hierarchy "snack_control:u1_snack_control|keycheck:r_keycheck" File: C:/d/snake/snack_control.v Line: 32
-Warning (10230): Verilog HDL assignment warning at keycheck.v(41): truncated value with size 32 to match size of target (21) File: C:/d/snake/keycheck.v Line: 41
-Info (12128): Elaborating entity "random_box" for hierarchy "random_box:u1_random_box" File: C:/d/snake/snake_top.v Line: 101
-Info (12128): Elaborating entity "random" for hierarchy "random_box:u1_random_box|random:U1_random" File: C:/d/snake/random_box.v Line: 17
-Info (12128): Elaborating entity "box_create" for hierarchy "random_box:u1_random_box|box_create:U1_box_create" File: C:/d/snake/random_box.v Line: 29
+    Info (12023): Found entity 1: video_pll_altpll File: D:/GradeFour/FPGA-VHDL/pro/snake/db/video_pll_altpll.v Line: 29
+Info (12128): Elaborating entity "video_pll_altpll" for hierarchy "video_pll:video_pll_m0|altpll:altpll_component|video_pll_altpll:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
+Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:u_vga_driver" File: D:/GradeFour/FPGA-VHDL/pro/snake/snake_top.v Line: 64
+Info (12128): Elaborating entity "vga_display" for hierarchy "vga_display:u_vga_display" File: D:/GradeFour/FPGA-VHDL/pro/snake/snake_top.v Line: 76
+Warning (10230): Verilog HDL assignment warning at vga_display.v(74): truncated value with size 32 to match size of target (14) File: D:/GradeFour/FPGA-VHDL/pro/snake/vga_display.v Line: 74
+Warning (10230): Verilog HDL assignment warning at vga_display.v(75): truncated value with size 32 to match size of target (3) File: D:/GradeFour/FPGA-VHDL/pro/snake/vga_display.v Line: 75
+Info (12128): Elaborating entity "osd_rom" for hierarchy "vga_display:u_vga_display|osd_rom:osd_rom_m0" File: D:/GradeFour/FPGA-VHDL/pro/snake/vga_display.v Line: 85
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component" File: D:/GradeFour/FPGA-VHDL/pro/snake/osd_rom.v Line: 81
+Info (12130): Elaborated megafunction instantiation "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component" File: D:/GradeFour/FPGA-VHDL/pro/snake/osd_rom.v Line: 81
+Info (12133): Instantiated megafunction "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component" with the following parameter: File: D:/GradeFour/FPGA-VHDL/pro/snake/osd_rom.v Line: 81
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "./utils/gameover.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "2048"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "widthad_a" = "11"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_e7a1.tdf
+    Info (12023): Found entity 1: altsyncram_e7a1 File: D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_e7a1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_e7a1" for hierarchy "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Critical Warning (127005): Memory depth (2048) in the design file differs from memory depth (1728) in the Memory Initialization File "D:/GradeFour/FPGA-VHDL/pro/snake/utils/gameover.mif" -- setting initial value for remaining addresses to 0 File: D:/GradeFour/FPGA-VHDL/pro/snake/osd_rom.v Line: 81
+Info (12128): Elaborating entity "snack_control" for hierarchy "snack_control:u1_snack_control" File: D:/GradeFour/FPGA-VHDL/pro/snake/snake_top.v Line: 92
+Info (12128): Elaborating entity "keycheck" for hierarchy "snack_control:u1_snack_control|keycheck:r_keycheck" File: D:/GradeFour/FPGA-VHDL/pro/snake/snack_control.v Line: 33
+Warning (10230): Verilog HDL assignment warning at keycheck.v(41): truncated value with size 32 to match size of target (21) File: D:/GradeFour/FPGA-VHDL/pro/snake/keycheck.v Line: 41
+Info (12128): Elaborating entity "random_box" for hierarchy "random_box:u1_random_box" File: D:/GradeFour/FPGA-VHDL/pro/snake/snake_top.v Line: 101
+Info (12128): Elaborating entity "random" for hierarchy "random_box:u1_random_box|random:U1_random" File: D:/GradeFour/FPGA-VHDL/pro/snake/random_box.v Line: 17
+Info (12128): Elaborating entity "box_create" for hierarchy "random_box:u1_random_box|box_create:U1_box_create" File: D:/GradeFour/FPGA-VHDL/pro/snake/random_box.v Line: 29
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eb24.tdf
-    Info (12023): Found entity 1: altsyncram_eb24 File: C:/d/snake/db/altsyncram_eb24.tdf Line: 27
+    Info (12023): Found entity 1: altsyncram_eb24 File: D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_eb24.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_tsc.tdf
-    Info (12023): Found entity 1: mux_tsc File: C:/d/snake/db/mux_tsc.tdf Line: 22
+    Info (12023): Found entity 1: mux_tsc File: D:/GradeFour/FPGA-VHDL/pro/snake/db/mux_tsc.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dvf.tdf
-    Info (12023): Found entity 1: decode_dvf File: C:/d/snake/db/decode_dvf.tdf Line: 22
+    Info (12023): Found entity 1: decode_dvf File: D:/GradeFour/FPGA-VHDL/pro/snake/db/decode_dvf.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_igi.tdf
-    Info (12023): Found entity 1: cntr_igi File: C:/d/snake/db/cntr_igi.tdf Line: 27
+    Info (12023): Found entity 1: cntr_igi File: D:/GradeFour/FPGA-VHDL/pro/snake/db/cntr_igi.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_sgc.tdf
-    Info (12023): Found entity 1: cmpr_sgc File: C:/d/snake/db/cmpr_sgc.tdf Line: 22
+    Info (12023): Found entity 1: cmpr_sgc File: D:/GradeFour/FPGA-VHDL/pro/snake/db/cmpr_sgc.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_m9j.tdf
-    Info (12023): Found entity 1: cntr_m9j File: C:/d/snake/db/cntr_m9j.tdf Line: 25
+    Info (12023): Found entity 1: cntr_m9j File: D:/GradeFour/FPGA-VHDL/pro/snake/db/cntr_m9j.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ggi.tdf
-    Info (12023): Found entity 1: cntr_ggi File: C:/d/snake/db/cntr_ggi.tdf Line: 27
+    Info (12023): Found entity 1: cntr_ggi File: D:/GradeFour/FPGA-VHDL/pro/snake/db/cntr_ggi.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_rgc.tdf
-    Info (12023): Found entity 1: cmpr_rgc File: C:/d/snake/db/cmpr_rgc.tdf Line: 22
+    Info (12023): Found entity 1: cmpr_rgc File: D:/GradeFour/FPGA-VHDL/pro/snake/db/cmpr_rgc.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_23j.tdf
-    Info (12023): Found entity 1: cntr_23j File: C:/d/snake/db/cntr_23j.tdf Line: 27
+    Info (12023): Found entity 1: cntr_23j File: D:/GradeFour/FPGA-VHDL/pro/snake/db/cntr_23j.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ngc.tdf
-    Info (12023): Found entity 1: cmpr_ngc File: C:/d/snake/db/cmpr_ngc.tdf Line: 22
+    Info (12023): Found entity 1: cmpr_ngc File: D:/GradeFour/FPGA-VHDL/pro/snake/db/cmpr_ngc.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2021.01.11.18:06:37 Progress: Loading slde7b6c866/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2021.01.14.14:08:12 Progress: Loading slde7b6c866/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1354,23 +1509,33 @@ Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification
 Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
 Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slde7b6c866/alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab File: C:/d/snake/db/ip/slde7b6c866/alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab File: D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_ident.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
-    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/d/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: C:/d/snake/box_create.v Line: 18
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: D:/GradeFour/FPGA-VHDL/pro/snake/db/ip/slde7b6c866/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated|q_a[0]" File: D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_e7a1.tdf Line: 34
+        Warning (14320): Synthesized away node "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated|q_a[1]" File: D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_e7a1.tdf Line: 56
+        Warning (14320): Synthesized away node "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated|q_a[2]" File: D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_e7a1.tdf Line: 78
+        Warning (14320): Synthesized away node "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated|q_a[3]" File: D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_e7a1.tdf Line: 100
+        Warning (14320): Synthesized away node "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated|q_a[4]" File: D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_e7a1.tdf Line: 122
+        Warning (14320): Synthesized away node "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated|q_a[5]" File: D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_e7a1.tdf Line: 144
+        Warning (14320): Synthesized away node "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated|q_a[6]" File: D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_e7a1.tdf Line: 166
+        Warning (14320): Synthesized away node "vga_display:u_vga_display|osd_rom:osd_rom_m0|altsyncram:altsyncram_component|altsyncram_e7a1:auto_generated|q_a[7]" File: D:/GradeFour/FPGA-VHDL/pro/snake/db/altsyncram_e7a1.tdf Line: 188
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high File: D:/GradeFour/FPGA-VHDL/pro/snake/box_create.v Line: 18
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 13 registers lost all their fanouts during netlist optimizations.
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 121 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
@@ -1380,10 +1545,10 @@ Info (21057): Implemented 2329 device resources after synthesis - the final reso
     Info (21061): Implemented 2255 logic cells
     Info (21064): Implemented 44 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4860 megabytes
-    Info: Processing ended: Mon Jan 11 18:06:59 2021
-    Info: Elapsed time: 00:00:50
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4857 megabytes
+    Info: Processing ended: Thu Jan 14 14:08:28 2021
+    Info: Elapsed time: 00:00:37
     Info: Total CPU time (on all processors): 00:01:08
 
 
