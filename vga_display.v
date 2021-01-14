@@ -32,11 +32,7 @@ always @(posedge vga_clk or negedge sys_rst_n) begin
         //   || (pixel_ypos < SIDE_W) || (pixel_ypos >= V_DISP - SIDE_W))
         //     pixel_data <= BLUE;                 //绘制边框为蓝色
         // else
-        case(State_)
-         0:begin
-             
-         end
-         1:begin
+        if(!fin) begin
             if((pixel_xpos >= box_x) && (pixel_xpos < box_x + BLOCK_W)
             && (pixel_ypos >= box_y) && (pixel_ypos < box_y + BLOCK_W))
                 pixel_data <= BLUE;                //绘制方块为蓝色
@@ -44,13 +40,31 @@ always @(posedge vga_clk or negedge sys_rst_n) begin
             if (snack_r)
                 pixel_data <= RED;
             else
-                pixel_data <= WHITE;                //绘制背景为白色
-         end
-         2:begin
-             
-         end
-
+                pixel_data <= WHITE;                //绘制背景为白色'
+        end else begin
+            if(pixel_xpos >= 292 && pixel_xpos <508 && pixel_ypos >= 168 && pixel_ypos <232 ) 
+                pixel_data <= BLACK ;
+            else 
+            if (snack_r)
+                pixel_data <= RED;
+            else
+                pixel_data <= WHITE;                //绘制背景为白色'
+        end
+        
     end
+
+
+
 end
+
+osd_rom osd_rom_m0
+(
+    .address(osd_ram_addr[15:3]),
+    .clock(pclk),
+    .q(q)
+);
+
+
+
 
 endmodule 
