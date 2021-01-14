@@ -27,20 +27,18 @@ localparam BLOCK_W = 10'd10;                    //方块宽度
 always @(posedge vga_clk or negedge sys_rst_n) begin         
     if (!sys_rst_n) 
         pixel_data <= BLACK;
-    else begin
-        // if((pixel_xpos < SIDE_W) || (pixel_xpos >= H_DISP - SIDE_W)
-        //   || (pixel_ypos < SIDE_W) || (pixel_ypos >= V_DISP - SIDE_W))
-        //     pixel_data <= BLUE;                 //绘制边框为蓝色
-        // else
-        if((pixel_xpos >= box_x) && (pixel_xpos < box_x + BLOCK_W)
-          && (pixel_ypos >= box_y) && (pixel_ypos < box_y + BLOCK_W))
+    else
+        if ((pixel_xpos < 11'd12) || (pixel_xpos >= 11'd588) || (pixel_ypos < 11'd12) || (pixel_ypos >= 11'd588))
+            pixel_data <= BLACK;               //绘制边框为蓝色
+        else
+        if((pixel_xpos >= box_x+10'd3) && (pixel_xpos <= box_x + 10'd15)
+          && (pixel_ypos >= box_y+10'd3) && (pixel_ypos <= box_y + 10'd15))
             pixel_data <= BLUE;                //绘制方块为黑色
         else
         if (snack_r)
             pixel_data <= RED;
         else
             pixel_data <= WHITE;                //绘制背景为白色
-    end
 end
 
 endmodule 

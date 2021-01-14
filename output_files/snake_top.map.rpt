@@ -1,5 +1,5 @@
 Analysis & Synthesis report for snake_top
-Mon Jan 11 18:06:59 2021
+Mon Jan 11 21:22:11 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -17,22 +17,24 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |snake_top|snack_control:u1_snack_control|dir
  11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for sld_signaltap:auto_signaltap_0
- 16. Parameter Settings for User Entity Instance: video_pll:video_pll_m0|altpll:altpll_component
- 17. Parameter Settings for User Entity Instance: vga_driver:u_vga_driver
- 18. Parameter Settings for User Entity Instance: vga_display:u_vga_display
- 19. Parameter Settings for User Entity Instance: snack_control:u1_snack_control
- 20. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 21. altpll Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "snack_control:u1_snack_control"
- 23. Signal Tap Logic Analyzer Settings
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Connections to In-System Debugging Instance "auto_signaltap_0"
- 27. Analysis & Synthesis Messages
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for sld_signaltap:auto_signaltap_0
+ 17. Parameter Settings for User Entity Instance: video_pll:video_pll_m0|altpll:altpll_component
+ 18. Parameter Settings for User Entity Instance: vga_driver:u_vga_driver
+ 19. Parameter Settings for User Entity Instance: vga_display:u_vga_display
+ 20. Parameter Settings for User Entity Instance: snack_control:u1_snack_control
+ 21. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 22. altpll Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "random_box:u1_random_box|box_create:U1_box_create"
+ 24. Port Connectivity Checks: "snack_control:u1_snack_control"
+ 25. Signal Tap Logic Analyzer Settings
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 29. Analysis & Synthesis Messages
 
 
 
@@ -58,15 +60,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 11 18:06:59 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 11 21:22:10 2021       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; snake_top                                   ;
 ; Top-level Entity Name              ; snake_top                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 2,218                                       ;
-;     Total combinational functions  ; 1,404                                       ;
-;     Dedicated logic registers      ; 1,402                                       ;
-; Total registers                    ; 1402                                        ;
+; Total logic elements               ; 2,920                                       ;
+;     Total combinational functions  ; 2,132                                       ;
+;     Dedicated logic registers      ; 1,370                                       ;
+; Total registers                    ; 1370                                        ;
 ; Total pins                         ; 24                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 180,224                                     ;
@@ -261,20 +263,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 2,218     ;
+; Estimated Total logic elements              ; 2,920     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1404      ;
+; Total combinational functions               ; 2132      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 712       ;
-;     -- 3 input functions                    ; 255       ;
-;     -- <=2 input functions                  ; 437       ;
+;     -- 4 input functions                    ; 566       ;
+;     -- 3 input functions                    ; 633       ;
+;     -- <=2 input functions                  ; 933       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1087      ;
-;     -- arithmetic mode                      ; 317       ;
+;     -- normal mode                          ; 1008      ;
+;     -- arithmetic mode                      ; 1124      ;
 ;                                             ;           ;
-; Total registers                             ; 1402      ;
-;     -- Dedicated logic registers            ; 1402      ;
+; Total registers                             ; 1370      ;
+;     -- Dedicated logic registers            ; 1370      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 24        ;
@@ -287,8 +289,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 552       ;
-; Total fan-out                               ; 10324     ;
-; Average fan-out                             ; 3.55      ;
+; Total fan-out                               ; 11707     ;
+; Average fan-out                             ; 3.25      ;
 +---------------------------------------------+-----------+
 
 
@@ -297,9 +299,9 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                   ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |snake_top                                                                                                                              ; 1404 (1)            ; 1402 (0)                  ; 180224      ; 0            ; 0       ; 0         ; 24   ; 0            ; |snake_top                                                                                                                                                                                                                                                                                                                                            ; snake_top                         ; work         ;
-;    |random_box:u1_random_box|                                                                                                           ; 24 (0)              ; 28 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|random_box:u1_random_box                                                                                                                                                                                                                                                                                                                   ; random_box                        ; work         ;
-;       |box_create:U1_box_create|                                                                                                        ; 17 (17)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|random_box:u1_random_box|box_create:U1_box_create                                                                                                                                                                                                                                                                                          ; box_create                        ; work         ;
+; |snake_top                                                                                                                              ; 2132 (1)            ; 1370 (0)                  ; 180224      ; 0            ; 0       ; 0         ; 24   ; 0            ; |snake_top                                                                                                                                                                                                                                                                                                                                            ; snake_top                         ; work         ;
+;    |random_box:u1_random_box|                                                                                                           ; 24 (14)             ; 14 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|random_box:u1_random_box                                                                                                                                                                                                                                                                                                                   ; random_box                        ; work         ;
+;       |box_create:U1_box_create|                                                                                                        ; 3 (3)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|random_box:u1_random_box|box_create:U1_box_create                                                                                                                                                                                                                                                                                          ; box_create                        ; work         ;
 ;       |random:U1_random|                                                                                                                ; 7 (7)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|random_box:u1_random_box|random:U1_random                                                                                                                                                                                                                                                                                                  ; random                            ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 127 (1)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 126 (0)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
@@ -387,12 +389,12 @@ refer to the applicable agreement for further details.
 ;                |lpm_shiftreg:ram_data_shift_out|                                                                                        ; 44 (44)             ; 44 (44)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                               ; lpm_shiftreg                      ; work         ;
 ;                |lpm_shiftreg:status_data_shift_out|                                                                                     ; 25 (25)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                            ; lpm_shiftreg                      ; work         ;
 ;             |sld_rom_sr:crc_rom_sr|                                                                                                     ; 30 (30)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                          ; sld_rom_sr                        ; work         ;
-;    |snack_control:u1_snack_control|                                                                                                     ; 591 (471)           ; 361 (269)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|snack_control:u1_snack_control                                                                                                                                                                                                                                                                                                             ; snack_control                     ; work         ;
+;    |snack_control:u1_snack_control|                                                                                                     ; 1289 (1169)         ; 343 (251)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|snack_control:u1_snack_control                                                                                                                                                                                                                                                                                                             ; snack_control                     ; work         ;
 ;       |keycheck:d_keycheck|                                                                                                             ; 30 (30)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|snack_control:u1_snack_control|keycheck:d_keycheck                                                                                                                                                                                                                                                                                         ; keycheck                          ; work         ;
 ;       |keycheck:l_keycheck|                                                                                                             ; 30 (30)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|snack_control:u1_snack_control|keycheck:l_keycheck                                                                                                                                                                                                                                                                                         ; keycheck                          ; work         ;
 ;       |keycheck:r_keycheck|                                                                                                             ; 30 (30)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|snack_control:u1_snack_control|keycheck:r_keycheck                                                                                                                                                                                                                                                                                         ; keycheck                          ; work         ;
 ;       |keycheck:u_keycheck|                                                                                                             ; 30 (30)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|snack_control:u1_snack_control|keycheck:u_keycheck                                                                                                                                                                                                                                                                                         ; keycheck                          ; work         ;
-;    |vga_display:u_vga_display|                                                                                                          ; 59 (59)             ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|vga_display:u_vga_display                                                                                                                                                                                                                                                                                                                  ; vga_display                       ; work         ;
+;    |vga_display:u_vga_display|                                                                                                          ; 89 (89)             ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|vga_display:u_vga_display                                                                                                                                                                                                                                                                                                                  ; vga_display                       ; work         ;
 ;    |vga_driver:u_vga_driver|                                                                                                            ; 93 (93)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|vga_driver:u_vga_driver                                                                                                                                                                                                                                                                                                                    ; vga_driver                        ; work         ;
 ;    |video_pll:video_pll_m0|                                                                                                             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|video_pll:video_pll_m0                                                                                                                                                                                                                                                                                                                     ; video_pll                         ; work         ;
 ;       |altpll:altpll_component|                                                                                                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snake_top|video_pll:video_pll_m0|altpll:altpll_component                                                                                                                                                                                                                                                                                             ; altpll                            ; work         ;
@@ -443,14 +445,67 @@ Encoding Type:  One-Hot
 ; Register name                                               ; Reason for Removal                                   ;
 +-------------------------------------------------------------+------------------------------------------------------+
 ; random_box:u1_random_box|box_create:U1_box_create|rand_x[9] ; Stuck at GND due to stuck port data_in               ;
-; random_box:u1_random_box|box_create:U1_box_create|rand_y[9] ; Stuck at GND due to stuck port data_in               ;
 ; vga_display:u_vga_display|pixel_data[1..4]                  ; Merged with vga_display:u_vga_display|pixel_data[0]  ;
 ; vga_display:u_vga_display|pixel_data[11..14]                ; Merged with vga_display:u_vga_display|pixel_data[15] ;
 ; vga_display:u_vga_display|pixel_data[5..9]                  ; Merged with vga_display:u_vga_display|pixel_data[10] ;
+; snack_control:u1_snack_control|snack_x[0][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[0][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[1][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[1][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[2][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[2][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[3][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[3][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[4][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[4][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[5][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[5][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[6][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[6][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[7][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[7][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[8][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[8][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[9][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[9][0]                ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[10][0]               ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[10][0]               ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_x[11][0]               ; Stuck at GND due to stuck port data_in               ;
+; snack_control:u1_snack_control|snack_y[11][0]               ; Stuck at GND due to stuck port data_in               ;
 ; snack_control:u1_snack_control|dir~8                        ; Lost fanout                                          ;
 ; snack_control:u1_snack_control|dir~9                        ; Lost fanout                                          ;
-; Total Number of Removed Registers = 17                      ;                                                      ;
+; Total Number of Removed Registers = 40                      ;                                                      ;
 +-------------------------------------------------------------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++----------------------------------------------+---------------------------+------------------------------------------------+
+; Register name                                ; Reason for Removal        ; Registers Removed due to This Register         ;
++----------------------------------------------+---------------------------+------------------------------------------------+
+; snack_control:u1_snack_control|snack_x[0][0] ; Stuck at GND              ; snack_control:u1_snack_control|snack_x[1][0],  ;
+;                                              ; due to stuck port data_in ; snack_control:u1_snack_control|snack_x[2][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_x[3][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_x[4][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_x[5][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_x[6][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_x[7][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_x[8][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_x[9][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_x[10][0], ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_x[11][0]  ;
+; snack_control:u1_snack_control|snack_y[0][0] ; Stuck at GND              ; snack_control:u1_snack_control|snack_y[1][0],  ;
+;                                              ; due to stuck port data_in ; snack_control:u1_snack_control|snack_y[2][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_y[3][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_y[4][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_y[5][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_y[6][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_y[7][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_y[8][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_y[9][0],  ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_y[10][0], ;
+;                                              ;                           ; snack_control:u1_snack_control|snack_y[11][0]  ;
++----------------------------------------------+---------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -458,12 +513,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1402  ;
-; Number of registers using Synchronous Clear  ; 173   ;
+; Total registers                              ; 1370  ;
+; Number of registers using Synchronous Clear  ; 179   ;
 ; Number of registers using Synchronous Load   ; 70    ;
-; Number of registers using Asynchronous Clear ; 764   ;
+; Number of registers using Asynchronous Clear ; 732   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 734   ;
+; Number of registers using Clock Enable       ; 697   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -473,24 +528,16 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; random_box:u1_random_box|box_create:U1_box_create|rand_x[2]                                                                                                                                                                                                                                                                     ; 4       ;
-; random_box:u1_random_box|box_create:U1_box_create|rand_x[3]                                                                                                                                                                                                                                                                     ; 4       ;
-; random_box:u1_random_box|box_create:U1_box_create|rand_x[5]                                                                                                                                                                                                                                                                     ; 4       ;
-; random_box:u1_random_box|box_create:U1_box_create|rand_x[8]                                                                                                                                                                                                                                                                     ; 4       ;
-; random_box:u1_random_box|box_create:U1_box_create|rand_y[2]                                                                                                                                                                                                                                                                     ; 4       ;
-; random_box:u1_random_box|box_create:U1_box_create|rand_y[3]                                                                                                                                                                                                                                                                     ; 4       ;
-; random_box:u1_random_box|box_create:U1_box_create|rand_y[5]                                                                                                                                                                                                                                                                     ; 4       ;
-; random_box:u1_random_box|box_create:U1_box_create|rand_y[8]                                                                                                                                                                                                                                                                     ; 4       ;
+; random_box:u1_random_box|box_create:U1_box_create|rand_x[5]                                                                                                                                                                                                                                                                     ; 10      ;
+; random_box:u1_random_box|box_create:U1_box_create|rand_x[8]                                                                                                                                                                                                                                                                     ; 2       ;
 ; snack_control:u1_snack_control|snack_x[0][4]                                                                                                                                                                                                                                                                                    ; 19      ;
-; snack_control:u1_snack_control|snack_x[0][7]                                                                                                                                                                                                                                                                                    ; 19      ;
+; snack_control:u1_snack_control|snack_x[0][6]                                                                                                                                                                                                                                                                                    ; 20      ;
 ; snack_control:u1_snack_control|snack_x[0][8]                                                                                                                                                                                                                                                                                    ; 19      ;
-; snack_control:u1_snack_control|snack_y[0][2]                                                                                                                                                                                                                                                                                    ; 19      ;
-; snack_control:u1_snack_control|snack_y[0][3]                                                                                                                                                                                                                                                                                    ; 18      ;
-; snack_control:u1_snack_control|snack_y[0][5]                                                                                                                                                                                                                                                                                    ; 18      ;
-; snack_control:u1_snack_control|snack_y[0][8]                                                                                                                                                                                                                                                                                    ; 18      ;
-; snack_control:u1_snack_control|length[0]                                                                                                                                                                                                                                                                                        ; 7       ;
-; random_box:u1_random_box|random:U1_random|rand_num[2]                                                                                                                                                                                                                                                                           ; 3       ;
-; random_box:u1_random_box|random:U1_random|rand_num[7]                                                                                                                                                                                                                                                                           ; 3       ;
+; snack_control:u1_snack_control|snack_y[0][6]                                                                                                                                                                                                                                                                                    ; 21      ;
+; snack_control:u1_snack_control|snack_y[0][7]                                                                                                                                                                                                                                                                                    ; 19      ;
+; snack_control:u1_snack_control|length[0]                                                                                                                                                                                                                                                                                        ; 5       ;
+; random_box:u1_random_box|random:U1_random|rand_num[7]                                                                                                                                                                                                                                                                           ; 2       ;
+; random_box:u1_random_box|random:U1_random|rand_num[2]                                                                                                                                                                                                                                                                           ; 1       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[1]                                                                                                                                                   ; 1       ;
@@ -506,7 +553,7 @@ Encoding Type:  One-Hot
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[11]                                                                                                                                                  ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[12]                                                                                                                                                  ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[0]                                                                                                                                                   ; 1       ;
-; Total number of inverted registers = 33                                                                                                                                                                                                                                                                                         ;         ;
+; Total number of inverted registers = 25                                                                                                                                                                                                                                                                                         ;         ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -515,11 +562,12 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |snake_top|snack_control:u1_snack_control|cnt_m[3]      ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |snake_top|snack_control:u1_snack_control|snack_x[0][9] ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |snake_top|snack_control:u1_snack_control|snack_y[0][7] ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |snake_top|snack_control:u1_snack_control|snack_x[0][7] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |snake_top|snack_control:u1_snack_control|snack_y[0][8] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |snake_top|vga_display:u_vga_display|pixel_data[0]      ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |snake_top|snack_control:u1_snack_control|cnt_m[15]     ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |snake_top|snack_control:u1_snack_control|snack_x[0][9] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |snake_top|snack_control:u1_snack_control|snack_y[0][8] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |snake_top|snack_control:u1_snack_control|snack_x[0][6] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |snake_top|snack_control:u1_snack_control|snack_y[0][7] ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |snake_top|snack_control:u1_snack_control|dir           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
@@ -939,15 +987,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-----------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: snack_control:u1_snack_control ;
-+----------------+---------------------+--------------------------------------+
-; Parameter Name ; Value               ; Type                                 ;
-+----------------+---------------------+--------------------------------------+
-; right          ; 00                  ; Unsigned Binary                      ;
-; left           ; 01                  ; Unsigned Binary                      ;
-; up             ; 10                  ; Unsigned Binary                      ;
-; down           ; 11                  ; Unsigned Binary                      ;
-; update_time    ; 1001100010010110100 ; Unsigned Binary                      ;
-+----------------+---------------------+--------------------------------------+
++----------------+---------------------------+--------------------------------+
+; Parameter Name ; Value                     ; Type                           ;
++----------------+---------------------------+--------------------------------+
+; right          ; 00                        ; Unsigned Binary                ;
+; left           ; 01                        ; Unsigned Binary                ;
+; up             ; 10                        ; Unsigned Binary                ;
+; down           ; 11                        ; Unsigned Binary                ;
+; update_time    ; 1001100010010110100000000 ; Unsigned Binary                ;
++----------------+---------------------------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1034,6 +1082,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+------------------------------------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "random_box:u1_random_box|box_create:U1_box_create"                                          ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; rand_x[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rand_y       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "snack_control:u1_snack_control"                                                                                                                                                    ;
 +-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1059,25 +1117,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 68                          ;
-; cycloneiii_ff         ; 414                         ;
-;     CLR               ; 31                          ;
-;     CLR SCLR          ; 114                         ;
-;     ENA CLR           ; 258                         ;
+; cycloneiii_ff         ; 382                         ;
+;     CLR               ; 30                          ;
+;     CLR SCLR          ; 120                         ;
+;     ENA CLR           ; 221                         ;
 ;     ENA CLR SCLR      ; 11                          ;
-; cycloneiii_lcell_comb ; 768                         ;
-;     arith             ; 221                         ;
-;         2 data inputs ; 185                         ;
-;         3 data inputs ; 36                          ;
-;     normal            ; 547                         ;
-;         0 data inputs ; 3                           ;
-;         1 data inputs ; 48                          ;
-;         2 data inputs ; 33                          ;
-;         3 data inputs ; 28                          ;
-;         4 data inputs ; 435                         ;
+; cycloneiii_lcell_comb ; 1496                        ;
+;     arith             ; 1028                        ;
+;         2 data inputs ; 609                         ;
+;         3 data inputs ; 419                         ;
+;     normal            ; 468                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 82                          ;
+;         2 data inputs ; 72                          ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 289                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 5.09                        ;
+; Average LUT depth     ; 6.44                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1090,133 +1148,133 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                  ;
-+----------------------------------------------+---------------+-----------+--------------------------------+-------------------+-----------------------------------------------------------------------+---------+
-; Name                                         ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                                                     ; Details ;
-+----------------------------------------------+---------------+-----------+--------------------------------+-------------------+-----------------------------------------------------------------------+---------+
-; clk                                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; clk                                                                   ; N/A     ;
-; snack_control:u1_snack_control|box_x[0]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[0]           ; N/A     ;
-; snack_control:u1_snack_control|box_x[0]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[0]           ; N/A     ;
-; snack_control:u1_snack_control|box_x[1]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[1]           ; N/A     ;
-; snack_control:u1_snack_control|box_x[1]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[1]           ; N/A     ;
-; snack_control:u1_snack_control|box_x[2]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[2]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_x[2]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[2]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_x[3]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[3]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_x[3]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[3]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_x[4]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[4]           ; N/A     ;
-; snack_control:u1_snack_control|box_x[4]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[4]           ; N/A     ;
-; snack_control:u1_snack_control|box_x[5]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[5]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_x[5]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[5]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_x[6]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[6]           ; N/A     ;
-; snack_control:u1_snack_control|box_x[6]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[6]           ; N/A     ;
-; snack_control:u1_snack_control|box_x[7]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[7]           ; N/A     ;
-; snack_control:u1_snack_control|box_x[7]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[7]           ; N/A     ;
-; snack_control:u1_snack_control|box_x[8]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[8]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_x[8]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[8]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_x[9]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                                   ; N/A     ;
-; snack_control:u1_snack_control|box_x[9]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                                   ; N/A     ;
-; snack_control:u1_snack_control|box_y[0]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[0]           ; N/A     ;
-; snack_control:u1_snack_control|box_y[0]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[0]           ; N/A     ;
-; snack_control:u1_snack_control|box_y[1]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[1]           ; N/A     ;
-; snack_control:u1_snack_control|box_y[1]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[1]           ; N/A     ;
-; snack_control:u1_snack_control|box_y[2]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[2]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_y[2]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[2]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_y[3]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[3]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_y[3]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[3]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_y[4]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[4]           ; N/A     ;
-; snack_control:u1_snack_control|box_y[4]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[4]           ; N/A     ;
-; snack_control:u1_snack_control|box_y[5]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[5]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_y[5]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[5]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_y[6]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[6]           ; N/A     ;
-; snack_control:u1_snack_control|box_y[6]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[6]           ; N/A     ;
-; snack_control:u1_snack_control|box_y[7]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[7]           ; N/A     ;
-; snack_control:u1_snack_control|box_y[7]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[7]           ; N/A     ;
-; snack_control:u1_snack_control|box_y[8]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[8]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_y[8]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_y[8]~_wirecell ; N/A     ;
-; snack_control:u1_snack_control|box_y[9]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                                   ; N/A     ;
-; snack_control:u1_snack_control|box_y[9]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                                   ; N/A     ;
-; snack_control:u1_snack_control|dir.down      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.down                               ; N/A     ;
-; snack_control:u1_snack_control|dir.down      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.down                               ; N/A     ;
-; snack_control:u1_snack_control|dir.left      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.left                               ; N/A     ;
-; snack_control:u1_snack_control|dir.left      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.left                               ; N/A     ;
-; snack_control:u1_snack_control|dir.right     ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.right~_wirecell                    ; N/A     ;
-; snack_control:u1_snack_control|dir.right     ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.right~_wirecell                    ; N/A     ;
-; snack_control:u1_snack_control|dir.up        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.up                                 ; N/A     ;
-; snack_control:u1_snack_control|dir.up        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.up                                 ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][0]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][0]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][1]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][1]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][2]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][2]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][3]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][3]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][4]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][4]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][5]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][5]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][6]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][6]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][7]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][7]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][8] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][8]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][8] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][8]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][9] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][9]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_x[0][9] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][9]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][0]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][0]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][1]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][1]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][2]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][2]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][3]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][3]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][4]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][4]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][5]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][5]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][6]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][6]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][7]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][7]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][8] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][8]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][8] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][8]~_wirecell                ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][9] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][9]                          ; N/A     ;
-; snack_control:u1_snack_control|snack_y[0][9] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][9]                          ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                   ; N/A     ;
-+----------------------------------------------+---------------+-----------+--------------------------------+-------------------+-----------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                        ;
++----------------------------------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------------------------------+---------+
+; Name                                         ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                                           ; Details ;
++----------------------------------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------------------------------+---------+
+; clk                                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; clk                                                         ; N/A     ;
+; snack_control:u1_snack_control|box_x[0]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                         ; N/A     ;
+; snack_control:u1_snack_control|box_x[0]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                         ; N/A     ;
+; snack_control:u1_snack_control|box_x[1]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[4] ; N/A     ;
+; snack_control:u1_snack_control|box_x[1]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[4] ; N/A     ;
+; snack_control:u1_snack_control|box_x[2]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[5] ; N/A     ;
+; snack_control:u1_snack_control|box_x[2]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[5] ; N/A     ;
+; snack_control:u1_snack_control|box_x[3]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~2                             ; N/A     ;
+; snack_control:u1_snack_control|box_x[3]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~2                             ; N/A     ;
+; snack_control:u1_snack_control|box_x[4]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~4                             ; N/A     ;
+; snack_control:u1_snack_control|box_x[4]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~4                             ; N/A     ;
+; snack_control:u1_snack_control|box_x[5]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~6                             ; N/A     ;
+; snack_control:u1_snack_control|box_x[5]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~6                             ; N/A     ;
+; snack_control:u1_snack_control|box_x[6]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~8                             ; N/A     ;
+; snack_control:u1_snack_control|box_x[6]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~8                             ; N/A     ;
+; snack_control:u1_snack_control|box_x[7]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~10                            ; N/A     ;
+; snack_control:u1_snack_control|box_x[7]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~10                            ; N/A     ;
+; snack_control:u1_snack_control|box_x[8]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~12                            ; N/A     ;
+; snack_control:u1_snack_control|box_x[8]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~12                            ; N/A     ;
+; snack_control:u1_snack_control|box_x[9]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~14                            ; N/A     ;
+; snack_control:u1_snack_control|box_x[9]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~14                            ; N/A     ;
+; snack_control:u1_snack_control|box_y[0]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                         ; N/A     ;
+; snack_control:u1_snack_control|box_y[0]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                         ; N/A     ;
+; snack_control:u1_snack_control|box_y[1]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[4] ; N/A     ;
+; snack_control:u1_snack_control|box_y[1]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[4] ; N/A     ;
+; snack_control:u1_snack_control|box_y[2]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[5] ; N/A     ;
+; snack_control:u1_snack_control|box_y[2]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|box_create:U1_box_create|rand_x[5] ; N/A     ;
+; snack_control:u1_snack_control|box_y[3]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~2                             ; N/A     ;
+; snack_control:u1_snack_control|box_y[3]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~2                             ; N/A     ;
+; snack_control:u1_snack_control|box_y[4]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~4                             ; N/A     ;
+; snack_control:u1_snack_control|box_y[4]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~4                             ; N/A     ;
+; snack_control:u1_snack_control|box_y[5]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~6                             ; N/A     ;
+; snack_control:u1_snack_control|box_y[5]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~6                             ; N/A     ;
+; snack_control:u1_snack_control|box_y[6]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~8                             ; N/A     ;
+; snack_control:u1_snack_control|box_y[6]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~8                             ; N/A     ;
+; snack_control:u1_snack_control|box_y[7]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~10                            ; N/A     ;
+; snack_control:u1_snack_control|box_y[7]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~10                            ; N/A     ;
+; snack_control:u1_snack_control|box_y[8]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~12                            ; N/A     ;
+; snack_control:u1_snack_control|box_y[8]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~12                            ; N/A     ;
+; snack_control:u1_snack_control|box_y[9]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~14                            ; N/A     ;
+; snack_control:u1_snack_control|box_y[9]      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; random_box:u1_random_box|Add1~14                            ; N/A     ;
+; snack_control:u1_snack_control|dir.down      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.down                     ; N/A     ;
+; snack_control:u1_snack_control|dir.down      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.down                     ; N/A     ;
+; snack_control:u1_snack_control|dir.left      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.left                     ; N/A     ;
+; snack_control:u1_snack_control|dir.left      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.left                     ; N/A     ;
+; snack_control:u1_snack_control|dir.right     ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.right~_wirecell          ; N/A     ;
+; snack_control:u1_snack_control|dir.right     ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.right~_wirecell          ; N/A     ;
+; snack_control:u1_snack_control|dir.up        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.up                       ; N/A     ;
+; snack_control:u1_snack_control|dir.up        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|dir.up                       ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                         ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                         ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][1]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][1]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][2]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][2]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][3]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][3]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][4]~_wirecell      ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][4]~_wirecell      ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][5]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][5]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][6]~_wirecell      ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][6]~_wirecell      ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][7]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][7]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][8] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][8]~_wirecell      ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][8] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][8]~_wirecell      ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][9] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][9]                ; N/A     ;
+; snack_control:u1_snack_control|snack_x[0][9] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_x[0][9]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                         ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][0] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                         ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][1]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][1] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][1]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][2]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][2] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][2]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][3]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][3] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][3]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][4]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][4] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][4]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][5]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][5] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][5]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][6]~_wirecell      ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][6] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][6]~_wirecell      ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][7]~_wirecell      ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][7] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][7]~_wirecell      ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][8] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][8]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][8] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][8]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][9] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][9]                ; N/A     ;
+; snack_control:u1_snack_control|snack_y[0][9] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; snack_control:u1_snack_control|snack_y[0][9]                ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|gnd                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
+; auto_signaltap_0|vcc                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                         ; N/A     ;
++----------------------------------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------------------------------+---------+
 
 
 +-------------------------------+
@@ -1225,7 +1283,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Jan 11 18:06:09 2021
+    Info: Processing started: Mon Jan 11 21:21:21 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off snake -c snake_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1319,6 +1377,8 @@ Info (12128): Elaborating entity "snack_control" for hierarchy "snack_control:u1
 Info (12128): Elaborating entity "keycheck" for hierarchy "snack_control:u1_snack_control|keycheck:r_keycheck" File: C:/d/snake/snack_control.v Line: 32
 Warning (10230): Verilog HDL assignment warning at keycheck.v(41): truncated value with size 32 to match size of target (21) File: C:/d/snake/keycheck.v Line: 41
 Info (12128): Elaborating entity "random_box" for hierarchy "random_box:u1_random_box" File: C:/d/snake/snake_top.v Line: 101
+Warning (10230): Verilog HDL assignment warning at random_box.v(30): truncated value with size 32 to match size of target (10) File: C:/d/snake/random_box.v Line: 30
+Warning (10230): Verilog HDL assignment warning at random_box.v(31): truncated value with size 32 to match size of target (10) File: C:/d/snake/random_box.v Line: 31
 Info (12128): Elaborating entity "random" for hierarchy "random_box:u1_random_box|random:U1_random" File: C:/d/snake/random_box.v Line: 17
 Info (12128): Elaborating entity "box_create" for hierarchy "random_box:u1_random_box|box_create:U1_box_create" File: C:/d/snake/random_box.v Line: 29
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eb24.tdf
@@ -1343,7 +1403,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: C:/d/snake/db/cmpr_ngc.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2021.01.11.18:06:37 Progress: Loading slde7b6c866/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2021.01.11.21:21:48 Progress: Loading slde7b6c866/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1374,15 +1434,15 @@ Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 121 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2329 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3028 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 2255 logic cells
+    Info (21061): Implemented 2954 logic cells
     Info (21064): Implemented 44 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4860 megabytes
-    Info: Processing ended: Mon Jan 11 18:06:59 2021
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4862 megabytes
+    Info: Processing ended: Mon Jan 11 21:22:11 2021
     Info: Elapsed time: 00:00:50
     Info: Total CPU time (on all processors): 00:01:08
 

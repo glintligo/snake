@@ -70,22 +70,22 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
-set_location_assignment PIN_F6 -to vga_rgb[15]
-set_location_assignment PIN_E5 -to vga_rgb[14]
-set_location_assignment PIN_D3 -to vga_rgb[13]
-set_location_assignment PIN_D4 -to vga_rgb[12]
-set_location_assignment PIN_C3 -to vga_rgb[11]
-set_location_assignment PIN_J6 -to vga_rgb[10]
-set_location_assignment PIN_L8 -to vga_rgb[9]
-set_location_assignment PIN_K8 -to vga_rgb[8]
-set_location_assignment PIN_F7 -to vga_rgb[7]
-set_location_assignment PIN_G5 -to vga_rgb[6]
-set_location_assignment PIN_F5 -to vga_rgb[5]
-set_location_assignment PIN_L4 -to vga_rgb[4]
-set_location_assignment PIN_L3 -to vga_rgb[3]
-set_location_assignment PIN_L7 -to vga_rgb[2]
-set_location_assignment PIN_K5 -to vga_rgb[1]
-set_location_assignment PIN_K6 -to vga_rgb[0]
+set_location_assignment PIN_K6 -to vga_rgb[15]
+set_location_assignment PIN_K5 -to vga_rgb[14]
+set_location_assignment PIN_L7 -to vga_rgb[13]
+set_location_assignment PIN_L3 -to vga_rgb[12]
+set_location_assignment PIN_L4 -to vga_rgb[11]
+set_location_assignment PIN_F5 -to vga_rgb[10]
+set_location_assignment PIN_G5 -to vga_rgb[9]
+set_location_assignment PIN_F7 -to vga_rgb[8]
+set_location_assignment PIN_K8 -to vga_rgb[7]
+set_location_assignment PIN_L8 -to vga_rgb[6]
+set_location_assignment PIN_J6 -to vga_rgb[5]
+set_location_assignment PIN_C3 -to vga_rgb[4]
+set_location_assignment PIN_D4 -to vga_rgb[3]
+set_location_assignment PIN_D3 -to vga_rgb[2]
+set_location_assignment PIN_E5 -to vga_rgb[1]
+set_location_assignment PIN_F6 -to vga_rgb[0]
 set_global_assignment -name VERILOG_FILE apple.v
 set_global_assignment -name VERILOG_FILE random_apple.v
 set_global_assignment -name VERILOG_FILE random_box.v
@@ -99,15 +99,11 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH keycheck_vlg_tst -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH random_vlg_tst -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME keycheck_vlg_tst -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id keycheck_vlg_tst
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1 ms" -section_id keycheck_vlg_tst
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME keycheck_vlg_tst -section_id keycheck_vlg_tst
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/keycheck.vt -section_id keycheck_vlg_tst
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_M15 -to key_u
 set_location_assignment PIN_M16 -to key_d
 set_location_assignment PIN_E16 -to key_r
@@ -263,5 +259,14 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_location_assignment PIN_N13 -to key_l
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/keycheck.vt -section_id keycheck_vlg_tst
+set_global_assignment -name EDA_TEST_BENCH_NAME random_vlg_tst -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id random_vlg_tst
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1 us" -section_id random_vlg_tst
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME random_vlg_tst -section_id random_vlg_tst
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/random.vt -section_id random_vlg_tst
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/stp2_auto_stripped.stp

@@ -538,26 +538,35 @@
 # vmap work rtl_work
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/d/snake {C:/d/snake/keycheck.v}
+# vlog -vlog01compat -work work +incdir+C:/d/snake {C:/d/snake/random.v}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
-# -- Compiling module keycheck
+# -- Compiling module random
 # 
 # Top level modules:
-# 	keycheck
-# 
-# vlog -vlog01compat -work work +incdir+C:/d/snake/simulation/modelsim {C:/d/snake/simulation/modelsim/keycheck.vt}
+# 	random
+# vlog -vlog01compat -work work +incdir+C:/d/snake/db {C:/d/snake/db/video_pll_altpll.v}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
-# -- Compiling module keycheck_vlg_tst
+# -- Compiling module video_pll_altpll
 # 
 # Top level modules:
-# 	keycheck_vlg_tst
+# 	video_pll_altpll
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  keycheck_vlg_tst
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps keycheck_vlg_tst 
+# vlog -vlog01compat -work work +incdir+C:/d/snake/simulation/modelsim {C:/d/snake/simulation/modelsim/random.vt}
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module random_vlg_tst
+# 
+# Top level modules:
+# 	random_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  random_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps random_vlg_tst 
 # ** Note: (vsim-3812) Design is being optimized...
 # 
-# Loading work.keycheck_vlg_tst(fast)
-# Loading work.keycheck(fast)
+# Loading work.random_vlg_tst(fast)
+# Loading work.random(fast)
+# ** Warning: (vsim-3015) C:/d/snake/simulation/modelsim/random.vt(44): [PCDPC] - Port size (9 or 9) does not match connection size (5) for port 'rand_num'. The port definition is at: C:/d/snake/random.v(6).
+# 
+#         Region: /random_vlg_tst/i1
 # 
 # add wave *
 # 
@@ -565,5 +574,6 @@
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
-# run 1 ms
+# run 1 us
 # Running testbench
+# Break key hit 

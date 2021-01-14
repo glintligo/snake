@@ -59,38 +59,38 @@ module snack_control(
     reg fin;//游戏结束标志位
     reg[9:0]snack_x[11:0];
     reg[9:0]snack_y[11:0];
-    reg [18:0]cnt_m; //最大值312500;
-    parameter update_time = 19'd312500;
+    reg [24:0]cnt_m; //最大值312500;
+    parameter update_time = 25'd20000000;
     //更新计数器
     always@(posedge clk or negedge rst_n)
-        if(!rst_n)  cnt_m <= 19'd0;
-        else if(fin)    cnt_m <= 19'd0;
-        else if(cnt_m == update_time)    cnt_m <= 19'd0;
-        else    cnt_m <= cnt_m + 19'd1;
+        if(!rst_n)  cnt_m <= 25'd0;
+        else if(fin)    cnt_m <= 25'd0;
+        else if(cnt_m == update_time)    cnt_m <= 25'd0;
+        else    cnt_m <= cnt_m + 25'd1;
     //蛇头
     always@(posedge clk or negedge rst_n)
         if(!rst_n)  
             begin
-                snack_x[0]  <= 10'd400;
-                snack_y[0]  <= 10'd300;
+                snack_x[0]  <= 10'd336;
+                snack_y[0]  <= 10'd192;
             end
         else if(cnt_m == update_time)
             case(dir)
             right : begin  
-                        if(snack_x[0] == 10'd799)   snack_x[0]  <= 10'd0;
-                        else    snack_x[0] <= snack_x[0] + 10'd1;
+                        if(snack_x[0] == 10'd588)   snack_x[0]  <= 10'd12;
+                        else    snack_x[0] <= snack_x[0] + 10'd18;
                      end
             left : begin
-                        if(snack_x[0] == 10'd0) snack_x[0]  <=  10'd799;
-                        else    snack_x[0]  <=  snack_x[0]  -   10'd1;
+                        if(snack_x[0] == 10'd12) snack_x[0]  <=  10'd570;
+                        else    snack_x[0]  <=  snack_x[0]  -   10'd18;
                     end
             up  :   begin
-                        if(snack_y[0] == 10'd0)   snack_y[0] <= 10'd599;
-                        else snack_y[0] <= snack_y[0] - 10'd1;
+                        if(snack_y[0] == 10'd12)   snack_y[0] <= 10'd588;
+                        else snack_y[0] <= snack_y[0] - 10'd18;
                     end
             down :  begin
-                        if(snack_y[0] == 10'd599) snack_y[0] <= 10'd0;
-                        else snack_y[0] <= snack_y[0] + 10'd1;
+                        if(snack_y[0] == 10'd588) snack_y[0] <= 10'd12;
+                        else snack_y[0] <= snack_y[0] + 10'd18;
                     end
             endcase
     //蛇身
@@ -176,30 +176,30 @@ module snack_control(
     //-------------------------------------------------------------------------------
     //蛇体渲染模块
 	
-        assign snack_r = (x_pos == snack_x[0] && y_pos == snack_y[0])||
-                            (x_pos == snack_x[1] && y_pos == snack_y[1]&&length > 4'd1)||
-                            (x_pos == snack_x[2] && y_pos == snack_y[2]&&length > 4'd2)||
-                            (x_pos == snack_x[3] && y_pos == snack_y[3]&&length > 4'd3)||
-                            (x_pos == snack_x[4] && y_pos == snack_y[4]&&length > 4'd4)||
-                            (x_pos == snack_x[5] && y_pos == snack_y[5]&&length > 4'd5)||
-                            (x_pos == snack_x[6] && y_pos == snack_y[6]&&length > 4'd6)||
-                            (x_pos == snack_x[7] && y_pos == snack_y[7]&&length > 4'd7)||
-                            (x_pos == snack_x[8] && y_pos == snack_y[8]&&length > 4'd8)||
-                            (x_pos == snack_x[9] && y_pos == snack_y[9]&&length > 4'd9)||
-                            (x_pos == snack_x[10] && y_pos == snack_y[10]&&length > 4'd10)||
-                            (x_pos == snack_x[11] && y_pos == snack_y[11]&&length > 4'd11);
-     /*
-     assign snack_r = ((x_pos >= snack_x[0]-10'd3 && x_pos <= snack_x[0]+10'd3)&&(y_pos >= snack_y[0]-10'd3 && y_pos <= snack_y[0]+10'd3))||
-                ((x_pos >= snack_x[1]-10'd3 && x_pos <= snack_x[1]+10'd3)&&(y_pos >= snack_y[1]-10'd3 && y_pos <= snack_y[1]+10'd3)&&length > 4'd1)||
-                ((x_pos >= snack_x[2]-10'd3 && x_pos <= snack_x[2]+10'd3)&&(y_pos >= snack_y[2]-10'd3 && y_pos <= snack_y[2]+10'd3)&&length > 4'd2)||
-                ((x_pos >= snack_x[3]-10'd3 && x_pos <= snack_x[3]+10'd3)&&(y_pos >= snack_y[3]-10'd3 && y_pos <= snack_y[3]+10'd3)&&length > 4'd3)||
-                ((x_pos >= snack_x[4]-10'd3 && x_pos <= snack_x[4]+10'd3)&&(y_pos >= snack_y[4]-10'd3 && y_pos <= snack_y[4]+10'd3)&&length > 4'd4)||
-                ((x_pos >= snack_x[5]-10'd3 && x_pos <= snack_x[5]+10'd3)&&(y_pos >= snack_y[5]-10'd3 && y_pos <= snack_y[5]+10'd3)&&length > 4'd5)||
-                ((x_pos >= snack_x[6]-10'd3 && x_pos <= snack_x[6]+10'd3)&&(y_pos >= snack_y[6]-10'd3 && y_pos <= snack_y[6]+10'd3)&&length > 4'd6)||
-                ((x_pos >= snack_x[7]-10'd3 && x_pos <= snack_x[7]+10'd3)&&(y_pos >= snack_y[7]-10'd3 && y_pos <= snack_y[7]+10'd3)&&length > 4'd7)||
-                ((x_pos >= snack_x[8]-10'd3 && x_pos <= snack_x[8]+10'd3)&&(y_pos >= snack_y[8]-10'd3 && y_pos <= snack_y[8]+10'd3)&&length > 4'd8)||
-                ((x_pos >= snack_x[9]-10'd3 && x_pos <= snack_x[9]+10'd3)&&(y_pos >= snack_y[9]-10'd3 && y_pos <= snack_y[9]+10'd3)&&length > 4'd9)||
-                ((x_pos >= snack_x[10]-10'd3 && x_pos <= snack_x[10]+10'd3)&&(y_pos >= snack_y[10]-10'd3 && y_pos <= snack_y[10]+10'd3)&&length > 4'd10)||
-                ((x_pos >= snack_x[11]-10'd3 && x_pos <= snack_x[11]+10'd3)&&(y_pos >= snack_y[11]-10'd3 && y_pos <= snack_y[11]+10'd3)&&length > 4'd11);
-                */
+        // assign snack_r = (x_pos == snack_x[0] && y_pos == snack_y[0])||
+        //                     (x_pos == snack_x[1] && y_pos == snack_y[1]&&length > 4'd1)||
+        //                     (x_pos == snack_x[2] && y_pos == snack_y[2]&&length > 4'd2)||
+        //                     (x_pos == snack_x[3] && y_pos == snack_y[3]&&length > 4'd3)||
+        //                     (x_pos == snack_x[4] && y_pos == snack_y[4]&&length > 4'd4)||
+        //                     (x_pos == snack_x[5] && y_pos == snack_y[5]&&length > 4'd5)||
+        //                     (x_pos == snack_x[6] && y_pos == snack_y[6]&&length > 4'd6)||
+        //                     (x_pos == snack_x[7] && y_pos == snack_y[7]&&length > 4'd7)||
+        //                     (x_pos == snack_x[8] && y_pos == snack_y[8]&&length > 4'd8)||
+        //                     (x_pos == snack_x[9] && y_pos == snack_y[9]&&length > 4'd9)||
+        //                     (x_pos == snack_x[10] && y_pos == snack_y[10]&&length > 4'd10)||
+        //                     (x_pos == snack_x[11] && y_pos == snack_y[11]&&length > 4'd11);
+
+     assign snack_r = ((x_pos >= snack_x[0]+10'd3 && x_pos <= snack_x[0]+10'd15)&&(y_pos >= snack_y[0]+10'd3 && y_pos <= snack_y[0]+10'd15))||
+                ((x_pos >= snack_x[1]+10'd3 && x_pos <= snack_x[1]+10'd15)&&(y_pos >= snack_y[1]+10'd3 && y_pos <= snack_y[1]+10'd15)&&length > 4'd1)||
+                ((x_pos >= snack_x[2]+10'd3 && x_pos <= snack_x[2]+10'd15)&&(y_pos >= snack_y[2]+10'd3 && y_pos <= snack_y[2]+10'd15)&&length > 4'd2)||
+                ((x_pos >= snack_x[3]+10'd3 && x_pos <= snack_x[3]+10'd15)&&(y_pos >= snack_y[3]+10'd3 && y_pos <= snack_y[3]+10'd15)&&length > 4'd3)||
+                ((x_pos >= snack_x[4]+10'd3 && x_pos <= snack_x[4]+10'd15)&&(y_pos >= snack_y[4]+10'd3 && y_pos <= snack_y[4]+10'd15)&&length > 4'd4)||
+                ((x_pos >= snack_x[5]+10'd3 && x_pos <= snack_x[5]+10'd15)&&(y_pos >= snack_y[5]+10'd3 && y_pos <= snack_y[5]+10'd15)&&length > 4'd5)||
+                ((x_pos >= snack_x[6]+10'd3 && x_pos <= snack_x[6]+10'd15)&&(y_pos >= snack_y[6]+10'd3 && y_pos <= snack_y[6]+10'd15)&&length > 4'd6)||
+                ((x_pos >= snack_x[7]+10'd3 && x_pos <= snack_x[7]+10'd15)&&(y_pos >= snack_y[7]+10'd3 && y_pos <= snack_y[7]+10'd15)&&length > 4'd7)||
+                ((x_pos >= snack_x[8]+10'd3 && x_pos <= snack_x[8]+10'd15)&&(y_pos >= snack_y[8]+10'd3 && y_pos <= snack_y[8]+10'd15)&&length > 4'd8)||
+                ((x_pos >= snack_x[9]+10'd3 && x_pos <= snack_x[9]+10'd15)&&(y_pos >= snack_y[9]+10'd3 && y_pos <= snack_y[9]+10'd15)&&length > 4'd9)||
+                ((x_pos >= snack_x[10]+10'd3 && x_pos <= snack_x[10]+10'd15)&&(y_pos >= snack_y[10]+10'd3 && y_pos <= snack_y[10]+10'd15)&&length > 4'd10)||
+                ((x_pos >= snack_x[11]+10'd3 && x_pos <= snack_x[11]+10'd15)&&(y_pos >= snack_y[11]+10'd3 && y_pos <= snack_y[11]+10'd15)&&length > 4'd11);
+
 endmodule

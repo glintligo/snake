@@ -27,8 +27,8 @@ module random_box(
                     .rand_x(rand_x),
                     .rand_y(rand_y)
                     );
-      assign box_x = rand_x;
-      assign box_y = rand_y;
+      assign box_x = (rand_x>>4)*18+12;
+      assign box_y = (rand_x>>4)*18+12;
     
     
 

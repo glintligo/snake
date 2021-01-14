@@ -33,13 +33,14 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/d/snake {C:/d/snake/keycheck.v}
+vlog -vlog01compat -work work +incdir+C:/d/snake {C:/d/snake/random.v}
+vlog -vlog01compat -work work +incdir+C:/d/snake/db {C:/d/snake/db/video_pll_altpll.v}
 
-vlog -vlog01compat -work work +incdir+C:/d/snake/simulation/modelsim {C:/d/snake/simulation/modelsim/keycheck.vt}
+vlog -vlog01compat -work work +incdir+C:/d/snake/simulation/modelsim {C:/d/snake/simulation/modelsim/random.vt}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  keycheck_vlg_tst
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  random_vlg_tst
 
 add wave *
 view structure
 view signals
-run 1 ms
+run 1 us
