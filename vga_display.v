@@ -69,18 +69,12 @@ always @(posedge vga_clk or negedge sys_rst_n) begin
     end
 end
 
-
-
-
-
 osd_rom osd_rom_m0
 (
     .address(osd_ram_addr[13:3]),
     .clock(vga_clk),
     .q(q[7:0])
 );
-
-
 
 
 endmodule 
