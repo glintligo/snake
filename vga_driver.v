@@ -21,7 +21,7 @@ parameter  H_TOTAL  =  11'd1056;   //行扫描周期
 parameter  V_SYNC   =  11'd4;     //场同步
 parameter  V_BACK   =  11'd23;    //场显示后沿
 parameter  V_DISP   =  11'd600;   //场有效数据
-parameter  V_FRONT  =  11'd1;    //场显示前沿
+parameter  V_FRONT  =  11'd1;     //场显示前沿
 parameter  V_TOTAL  =  11'd628;   //场扫描周期
           
 //reg define                                     

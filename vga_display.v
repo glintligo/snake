@@ -25,9 +25,16 @@ localparam BLUE   = 16'b00000_000000_11111;     //RGB565 蓝色
 //给不同的区域绘制不同的颜色
 localparam BLOCK_W = 10'd10;                    //方块宽度
 
+
+reg     [13:0]      osd_ram_addr;
+wire    [7:0]       q;
+reg     [2:0]       bitplace;
+
+
 always @(posedge vga_clk or negedge sys_rst_n) begin         
     if (!sys_rst_n) 
         pixel_data <= BLACK;
+
     else begin
         // if((pixel_xpos < SIDE_W) || (pixel_xpos >= H_DISP - SIDE_W)
         //   || (pixel_ypos < SIDE_W) || (pixel_ypos >= V_DISP - SIDE_W))
@@ -43,12 +50,17 @@ always @(posedge vga_clk or negedge sys_rst_n) begin
             else
                 pixel_data <= WHITE;                //绘制背景为白色
         end else begin
-            if(pixel_xpos >= 292 && pixel_xpos <508 && pixel_ypos >= 168 && pixel_ypos <232 ) 
+            if(pixel_xpos >= 292 && pixel_xpos <508 && pixel_ypos >= 168 && pixel_ypos <232 ) begin
+                osd_ram_addr <= osd_ram_addr + 1;
+                bitplace     <= bitplace     - 1;
                 if(q[bitplace[2:0]])
                     pixel_data <= BLACK ;
                 else 
                     pixel_data <= WHITE;
-            else 
+            end else if( pixel_xpos > 508 && pixel_ypos >232 )begin
+                osd_ram_addr <= 0;
+                bitplace <= 3'b000;
+            end
             if (snack_r)
                 pixel_data <= RED;
             else
@@ -60,22 +72,6 @@ end
 
 
 
-reg     [13:0]      osd_ram_addr;
-wire    [7:0]       q;
-reg     [2:0]       bitplace;
-
-always @ (posedge vga_clk or negedge sys_rst_n) begin
-    if(!sys_rst_n) begin
-        osd_ram_addr <= 0;
-        bitplace <= 3'b111;
-    end
-    else begin
-        if(fin) begin
-            osd_ram_addr <= osd_ram_addr + 1;
-            bitplace     <= bitplace + 1;
-        end
-    end
-end
 
 osd_rom osd_rom_m0
 (
