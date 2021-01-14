@@ -40,28 +40,47 @@ always @(posedge vga_clk or negedge sys_rst_n) begin
             if (snack_r)
                 pixel_data <= RED;
             else
-                pixel_data <= WHITE;                //绘制背景为白色'
+                pixel_data <= WHITE;                //绘制背景为白色
         end else begin
             if(pixel_xpos >= 292 && pixel_xpos <508 && pixel_ypos >= 168 && pixel_ypos <232 ) 
-                pixel_data <= BLACK ;
+                if(q[bitplace[2:0]])
+                    pixel_data <= BLACK ;
+                else 
+                    pixel_data <= WHITE;
             else 
             if (snack_r)
                 pixel_data <= RED;
             else
-                pixel_data <= WHITE;                //绘制背景为白色'
-        end
-        
+                pixel_data <= WHITE;                //绘制背景为白色
+        end 
     end
+end
 
 
 
+
+reg     [13:0]      osd_ram_addr;
+wire    [7:0]       q;
+reg     [2:0]       bitplace;
+
+always @ (posedge vga_clk or negedge sys_rst_n) begin
+    if(!sys_rst_n) begin
+        osd_ram_addr <= 0;
+        bitplace <= 3'b111;
+    end
+    else begin
+        if(fin) begin
+            osd_ram_addr <= osd_ram_addr + 1;
+            bitplace     <= bitplace + 1;
+        end
+    end
 end
 
 osd_rom osd_rom_m0
 (
-    .address(osd_ram_addr[15:3]),
-    .clock(pclk),
-    .q(q)
+    .address(osd_ram_addr[13:3]),
+    .clock(vga_clk),
+    .q(q[7:0])
 );
 
 
